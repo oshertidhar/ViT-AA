@@ -1,0 +1,13 @@
+{
+    "image_size" : 224,
+    "patch_size" : 16,
+    "num_classes" : 10,
+    "num_channels" : 3,
+    "embedding_dim" : 192,
+    "head_dim" : 64,
+    "depth" : 12,
+    "num_heads" : 3,
+    "mlp_dim" : 768,
+    "aa_memory_dim" : [1, 197],
+    "aa_sizes" : [[1, 2], [1, 2]] 
+}
