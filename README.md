@@ -2,11 +2,11 @@
 TAU DeepLearning course project. Created By Osher Tidhar and Yoav Kurtz
 
 ---
-This repository includes our additions to the [DEiT training code](https://github.com/facebookresearch/deit)
+This repository includes our additions to the [DEiT training code](https://github.com/facebookresearch/deit).
 
 ## General
 - Our ViT+AA model is implemented in `AAVitFactory.py`.
-- Needed extensions for training the model on CIFAR10 dataset are added to `main.py, datasets.py`.
+- Needed extensions for training the model on CIFAR10 dataset are added to `main.py, datasets.py` which were taken from DEiT repository.
 - `AAVitFactory.py` creates models according to configuration files found in `cfgs` folder.
 
 ## How to run
