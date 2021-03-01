@@ -51,7 +51,7 @@ class Attention(nn.Module):
         self.heads = heads
         self.scale = dim_head ** -0.5
 
-        self.to_qkv = nn.Linear(dim, inner_dim * 3, bias=False)
+        self.to_qkv = nn.Linear(dim, inner_dim * 3, bias=True)
         self.to_out = nn.Sequential(
             nn.Linear(inner_dim, dim),
             nn.Dropout(dropout)
@@ -85,8 +85,6 @@ class AreaAttentionWrapper(nn.Module):
                  memory_height, memory_width, heads=8, dropout=0.):
         super().__init__()
 
-        self.to_qkv = nn.Linear(dim, 3 * dim, bias=False)
-
         area_attention_head = AreaAttention(key_query_size=dim_head,
                                             max_area_height=max_area_height,
                                             max_area_width=max_area_width,
@@ -102,11 +100,8 @@ class AreaAttentionWrapper(nn.Module):
 
     def forward(self, x, mask=None):
         assert mask is None, 'Mask is currently not supported for area_attention'
-        # x : [batch, num_tokens, dim]
-        qkv = self.to_qkv(x)  # [batch, num_tokens, 3 * dim]
-        q, k, v = rearrange(qkv, 'b n (qkv d) -> qkv b n d', qkv=3)  # 3 vectors of [batch, num_tokens, dim]
+        return self.multihead_area_attention(x, x, x)
 
-        return self.multihead_area_attention(q, k, v)
 
 class Transformer(nn.Module):
 
