@@ -15,6 +15,8 @@ This repository includes our additions to the [DEiT training code](https://githu
 2. Place `AAVitFactory.py` in the cloned DeIT repo.
 3. Replace `main.py, datasets.py` with the corresponding files in this repository.
 4. ViT-AA model can be trained by executing `main.py`.
+    * For training the baseline models (the ones in DeIT), use the `--model` flag
+    * For training the area-attention models, use the `--aa-cfg-file` followed by the path to the chosen configuration file from [cfgs](https://github.com/YoavKurtz/ViT-AA/tree/main/cfgs) folder
 
 ## Citations
 ```bibtex
