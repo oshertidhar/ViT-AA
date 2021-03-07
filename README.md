@@ -39,3 +39,15 @@ This repository includes our additions to the [DEiT training code](https://githu
     primaryClass = {cs.CV}
 }
 ```
+
+```
+```bibtex
+@misc{li2020area,
+      title={Area Attention}, 
+      author={Yang Li and Lukasz Kaiser and Samy Bengio and Si Si},
+      year={2020},
+      eprint={1810.10126},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
+```
