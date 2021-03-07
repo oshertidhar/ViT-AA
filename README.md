@@ -39,8 +39,6 @@ This repository includes our additions to the [DEiT training code](https://githu
     primaryClass = {cs.CV}
 }
 ```
-
-```
 ```bibtex
 @misc{li2020area,
       title={Area Attention}, 
